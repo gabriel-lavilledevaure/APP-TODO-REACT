@@ -21,24 +21,24 @@ export default function TodoForm({ onAddTodo }) {
       {/* US-03 : champ de saisie */}
       <label
         htmlFor="new-todo"
-        className="text-fg-secondary mb-2 block text-sm font-medium"
+        className="text-body-muted mb-xs block font-text text-caption font-semibold"
       >
         Nouvelle tâche
       </label>
 
-      <div className="flex flex-col gap-3 sm:flex-row">
+      <div className="flex flex-col gap-sm sm:flex-row">
         <input
           id="new-todo"
           type="text"
           value={title}
           onChange={(event) => setTitle(event.target.value)}
-          className="border-border bg-bg text-fg placeholder:text-fg-tertiary focus:border-apple-blue min-w-0 flex-1 rounded-xl border px-4 py-3 transition-colors outline-none"
+          className="border-hairline bg-canvas text-ink placeholder:text-ink-muted-48 focus:border-primary min-w-0 flex-1 rounded-xl border px-lg py-sm font-text text-body transition-colors outline-none"
         />
 
         {/* US-03 : bouton d'ajout */}
         <button
           type="submit"
-          className="bg-apple-blue hover:bg-apple-blue-hover rounded-full px-6 py-3 font-medium text-white transition-colors"
+          className="bg-primary hover:bg-primary-focus rounded-full px-lg py-sm font-text text-body font-semibold text-on-primary transition-colors"
         >
           Ajouter
         </button>

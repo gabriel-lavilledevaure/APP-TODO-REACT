@@ -36,10 +36,10 @@ export default function TodoItem({
   };
 
   return (
-    <li className="flex flex-col gap-4 py-5 sm:flex-row sm:items-center sm:justify-between">
+    <li className="flex flex-col gap-lg py-lg sm:flex-row sm:items-center sm:justify-between">
       {isEditing ? (
         // US-06 : champ de modification
-        <div className="flex w-full items-center gap-3">
+        <div className="flex w-full items-center gap-sm">
           <input
             type="text"
             value={newTitle}
@@ -55,14 +55,14 @@ export default function TodoItem({
             }}
             autoFocus
             aria-label="Modifier la tâche"
-            className="border-border bg-bg text-fg focus:border-apple-blue min-w-0 flex-1 rounded-xl border px-4 py-2 outline-none"
+            className="border-hairline bg-canvas text-ink focus:border-primary min-w-0 flex-1 rounded-xl border px-lg py-xs font-text text-body outline-none"
           />
 
           {/* US-06 : bouton enregistrer */}
           <button
             type="button"
             onClick={saveEdit}
-            className="bg-apple-blue hover:bg-apple-blue-hover shrink-0 rounded-full px-4 py-2 text-sm font-medium text-white transition-colors"
+            className="bg-primary hover:bg-primary-focus shrink-0 rounded-full px-md py-xs font-text text-caption font-semibold text-on-primary transition-colors"
           >
             Enregistrer
           </button>
@@ -71,21 +71,21 @@ export default function TodoItem({
           <button
             type="button"
             onClick={cancelEdit}
-            className="border-border text-fg hover:bg-surface shrink-0 rounded-full border px-4 py-2 text-sm transition-colors"
+            className="border-hairline text-ink hover:bg-canvas-parchment shrink-0 rounded-full border px-md py-xs font-text text-caption transition-colors"
           >
             Annuler
           </button>
         </div>
       ) : (
         <>
-          <div className="flex min-w-0 flex-1 items-center gap-4">
+          <div className="flex min-w-0 flex-1 items-center gap-lg">
             {/* US-04 : cocher ou décocher une tâche */}
             <input
               type="checkbox"
               checked={completed}
               onChange={onToggle}
               aria-label={`Terminer la tâche : ${title}`}
-              className="accent-apple-blue h-5 w-5 shrink-0 cursor-pointer"
+              className="accent-primary h-5 w-5 shrink-0 cursor-pointer"
             />
 
             {/* US-01 : afficher le titre */}
@@ -94,8 +94,8 @@ export default function TodoItem({
               type="button"
               onClick={startEdit}
               title="Cliquer pour modifier"
-              className={`hover:text-apple-blue min-w-0 cursor-text text-left break-words transition-colors ${
-                completed ? "text-fg-tertiary line-through" : "text-fg"
+              className={`hover:text-primary min-w-0 cursor-text text-left font-text text-body break-words transition-colors ${
+                completed ? "text-ink-muted-48 line-through" : "text-ink"
               }`}
             >
               {title}
@@ -106,7 +106,7 @@ export default function TodoItem({
           <button
             type="button"
             onClick={onDelete}
-            className="border-border text-fg hover:bg-surface shrink-0 rounded-full border px-4 py-2 text-sm transition-colors"
+            className="border-hairline text-ink hover:bg-canvas-parchment shrink-0 rounded-full border px-md py-xs font-text text-caption transition-colors"
           >
             Supprimer
           </button>

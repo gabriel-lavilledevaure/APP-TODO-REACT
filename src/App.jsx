@@ -64,11 +64,11 @@ export default function App() {
 
   return (
     <div className={darkMode ? "dark" : ""}>
-      <main className="bg-bg text-fg min-h-screen px-6 py-24 transition-colors duration-200">
+      <main className="bg-canvas text-ink px-lg py-section min-h-screen transition-colors duration-200">
         <div className="mx-auto max-w-3xl">
           {/* US-09 : switch dark mode style Apple */}
-          <div className="mb-8 flex items-center justify-end gap-3">
-            <span className="text-fg text-sm">Mode sombre</span>
+          <div className="mb-lg gap-sm flex items-center justify-end">
+            <span className="text-ink text-caption">Mode sombre</span>
 
             <button
               type="button"
@@ -76,8 +76,8 @@ export default function App() {
               aria-checked={darkMode}
               aria-label="Mode sombre"
               onClick={() => setDarkMode(!darkMode)}
-              className={`focus-visible:outline-apple-blue relative h-[31px] w-[51px] rounded-full transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 ${
-                darkMode ? "bg-apple-blue" : "bg-switch-off"
+              className={`focus-visible:outline-primary-focus relative h-[31px] w-[51px] rounded-full transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 ${
+                darkMode ? "bg-primary" : "bg-switch-off"
               }`}
             >
               <span
@@ -89,12 +89,12 @@ export default function App() {
           </div>
 
           {/* US-01 : titre */}
-          <h1 className="text-fg text-4xl font-bold tracking-tight">
+          <h1 className="font-display text-ink text-display-lg font-semibold">
             Mes tâches
           </h1>
 
           {/* US-08 : compteur */}
-          <p className="text-fg-secondary mt-2 mb-10">
+          <p className="text-body-muted mt-xxs mb-xxl text-body">
             {remainingTodos} tâche{remainingTodos > 1 ? "s" : ""} restante
             {remainingTodos > 1 ? "s" : ""}
           </p>
@@ -103,7 +103,7 @@ export default function App() {
           <TodoForm onAddTodo={addTodo} />
 
           {/* US-07 : boutons de filtrage */}
-          <div className="mt-8 mb-8 flex flex-wrap gap-2">
+          <div className="mt-xl mb-xl gap-xxs flex flex-wrap">
             {[
               { value: "all", label: "Toutes" },
               { value: "active", label: "À faire" },
@@ -113,10 +113,10 @@ export default function App() {
                 key={item.value}
                 type="button"
                 onClick={() => setFilter(item.value)}
-                className={`rounded-full border px-4 py-2 text-sm transition-colors ${
+                className={`px-md py-xs text-caption rounded-full border transition-colors ${
                   filter === item.value
-                    ? "border-apple-blue bg-apple-blue text-white"
-                    : "border-border bg-surface text-fg hover:bg-surface-secondary"
+                    ? "border-primary bg-primary text-on-primary"
+                    : "border-hairline bg-canvas-parchment text-ink hover:bg-surface-pearl"
                 }`}
               >
                 {item.label}
@@ -127,9 +127,11 @@ export default function App() {
           {/* US-02 : liste vide */}
           {/* US-07 : filtre sans résultat */}
           {todos.length === 0 ? (
-            <p className="text-fg-secondary">Aucune tâche pour le moment</p>
+            <p className="text-body-muted text-body">
+              Aucune tâche pour le moment
+            </p>
           ) : visibleTodos.length === 0 ? (
-            <p className="text-fg-secondary">
+            <p className="text-body-muted text-body">
               {filter === "active"
                 ? "Aucune tâche à faire"
                 : "Aucune tâche terminée"}

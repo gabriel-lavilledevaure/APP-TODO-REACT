@@ -3,74 +3,181 @@
 /* US-09 : activer le dark mode manuellement */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Design system Apple - Mode clair */
 :root {
   color-scheme: light;
 
-  --bg: #ffffff;
-  --surface: #f5f5f7;
-  --surface-secondary: #e8e8ed;
+  --token-primary: #0066cc;
+  --token-primary-focus: #0071e3;
+  --token-primary-on-dark: #2997ff;
+  --token-ink: #1d1d1f;
+  --token-body: #1d1d1f;
+  --token-body-on-dark: #ffffff;
+  --token-body-muted: #cccccc;
+  --token-ink-muted-80: #333333;
+  --token-ink-muted-48: #7a7a7a;
+  --token-divider-soft: #f0f0f0;
+  --token-hairline: #e0e0e0;
+  --token-canvas: #ffffff;
+  --token-canvas-parchment: #f5f5f7;
+  --token-surface-pearl: #fafafc;
+  --token-surface-tile-1: #272729;
+  --token-surface-tile-2: #2a2a2c;
+  --token-surface-tile-3: #252527;
+  --token-surface-black: #000000;
+  --token-surface-chip-translucent: #d2d2d7;
+  --token-on-primary: #ffffff;
+  --token-on-dark: #ffffff;
+  --token-switch-off: #e9e9ea;
 
-  --fg: #1d1d1f;
-  --fg-secondary: #6e6e73;
-  --fg-tertiary: #86868b;
+  --token-font-display: "SF Pro Display", system-ui, -apple-system, sans-serif;
+  --token-font-text: "SF Pro Text", system-ui, -apple-system, sans-serif;
 
-  --border: #d2d2d7;
-  --border-strong: #86868b;
+  --token-size-hero: 56px;
+  --token-size-display-lg: 40px;
+  --token-size-display-md: 34px;
+  --token-size-lead: 28px;
+  --token-size-lead-airy: 24px;
+  --token-size-tagline: 21px;
+  --token-size-body: 17px;
+  --token-size-caption: 14px;
+  --token-size-fine-print: 12px;
+  --token-size-micro-legal: 10px;
+  --token-size-nav-link: 12px;
 
-  --apple-blue: #007aff;
-  --apple-blue-hover: #0066d6;
+  --token-weight-light: 300;
+  --token-weight-regular: 400;
+  --token-weight-semibold: 600;
+  --token-weight-bold: 700;
 
-  --switch-off: #e9e9ea;
+  --token-leading-hero: 1.07;
+  --token-leading-display-lg: 1.1;
+  --token-leading-display-md: 1.47;
+  --token-leading-lead: 1.14;
+  --token-leading-lead-airy: 1.5;
+  --token-leading-tagline: 1.19;
+  --token-leading-body: 1.47;
+  --token-leading-caption: 1.43;
+  --token-leading-fine-print: 1;
+  --token-leading-micro-legal: 1.3;
+  --token-leading-nav-link: 1;
+
+  --token-tracking-hero: -0.28px;
+  --token-tracking-display-md: -0.374px;
+  --token-tracking-lead: 0.196px;
+  --token-tracking-tagline: 0.231px;
+  --token-tracking-body: -0.374px;
+  --token-tracking-caption: -0.224px;
+  --token-tracking-fine-print: -0.12px;
+  --token-tracking-micro-legal: -0.08px;
+  --token-tracking-nav-link: -0.12px;
+
+  --token-space-xxs: 4px;
+  --token-space-xs: 8px;
+  --token-space-sm: 12px;
+  --token-space-md: 17px;
+  --token-space-lg: 24px;
+  --token-space-xl: 32px;
+  --token-space-xxl: 48px;
+  --token-space-section: 80px;
 }
 
-/* Design system Apple - Mode sombre */
 .dark {
   color-scheme: dark;
 
-  --bg: #000000;
-  --surface: #1c1c1e;
-  --surface-secondary: #2c2c2e;
-
-  --fg: #f5f5f7;
-  --fg-secondary: #a1a1a6;
-  --fg-tertiary: #8e8e93;
-
-  --border: #38383a;
-  --border-strong: #636366;
-
-  --apple-blue: #0a84ff;
-  --apple-blue-hover: #409cff;
-
-  --switch-off: #39393d;
+  --token-canvas: #000000;
+  --token-canvas-parchment: #1c1c1e;
+  --token-surface-pearl: #2c2c2e;
+  --token-ink: #f5f5f7;
+  --token-body: #f5f5f7;
+  --token-body-muted: #a1a1a6;
+  --token-ink-muted-80: #a1a1a6;
+  --token-ink-muted-48: #8e8e93;
+  --token-divider-soft: #38383a;
+  --token-hairline: #636366;
+  --token-primary: #0a84ff;
+  --token-primary-focus: #409cff;
+  --token-switch-off: #39393d;
 }
 
-/* Variables utilisables avec Tailwind */
 @theme inline {
-  --color-bg: var(--bg);
-  --color-surface: var(--surface);
-  --color-surface-secondary: var(--surface-secondary);
+  --color-primary: var(--token-primary);
+  --color-primary-focus: var(--token-primary-focus);
+  --color-primary-on-dark: var(--token-primary-on-dark);
+  --color-ink: var(--token-ink);
+  --color-body: var(--token-body);
+  --color-body-on-dark: var(--token-body-on-dark);
+  --color-body-muted: var(--token-body-muted);
+  --color-ink-muted-80: var(--token-ink-muted-80);
+  --color-ink-muted-48: var(--token-ink-muted-48);
+  --color-divider-soft: var(--token-divider-soft);
+  --color-hairline: var(--token-hairline);
+  --color-canvas: var(--token-canvas);
+  --color-canvas-parchment: var(--token-canvas-parchment);
+  --color-surface-pearl: var(--token-surface-pearl);
+  --color-surface-tile-1: var(--token-surface-tile-1);
+  --color-surface-tile-2: var(--token-surface-tile-2);
+  --color-surface-tile-3: var(--token-surface-tile-3);
+  --color-surface-black: var(--token-surface-black);
+  --color-surface-chip-translucent: var(--token-surface-chip-translucent);
+  --color-on-primary: var(--token-on-primary);
+  --color-on-dark: var(--token-on-dark);
+  --color-switch-off: var(--token-switch-off);
 
-  --color-fg: var(--fg);
-  --color-fg-secondary: var(--fg-secondary);
-  --color-fg-tertiary: var(--fg-tertiary);
+  --font-display: var(--token-font-display);
+  --font-text: var(--token-font-text);
+  --font-weight-light: var(--token-weight-light);
+  --font-weight-regular: var(--token-weight-regular);
+  --font-weight-semibold: var(--token-weight-semibold);
+  --font-weight-bold: var(--token-weight-bold);
 
-  --color-border: var(--border);
-  --color-border-strong: var(--border-strong);
+  --text-hero: var(--token-size-hero);
+  --text-hero--line-height: var(--token-leading-hero);
+  --text-hero--letter-spacing: var(--token-tracking-hero);
+  --text-display-lg: var(--token-size-display-lg);
+  --text-display-lg--line-height: var(--token-leading-display-lg);
+  --text-display-md: var(--token-size-display-md);
+  --text-display-md--line-height: var(--token-leading-display-md);
+  --text-display-md--letter-spacing: var(--token-tracking-display-md);
+  --text-lead: var(--token-size-lead);
+  --text-lead--line-height: var(--token-leading-lead);
+  --text-lead--letter-spacing: var(--token-tracking-lead);
+  --text-lead-airy: var(--token-size-lead-airy);
+  --text-lead-airy--line-height: var(--token-leading-lead-airy);
+  --text-tagline: var(--token-size-tagline);
+  --text-tagline--line-height: var(--token-leading-tagline);
+  --text-tagline--letter-spacing: var(--token-tracking-tagline);
+  --text-body: var(--token-size-body);
+  --text-body--line-height: var(--token-leading-body);
+  --text-body--letter-spacing: var(--token-tracking-body);
+  --text-caption: var(--token-size-caption);
+  --text-caption--line-height: var(--token-leading-caption);
+  --text-caption--letter-spacing: var(--token-tracking-caption);
+  --text-fine-print: var(--token-size-fine-print);
+  --text-fine-print--line-height: var(--token-leading-fine-print);
+  --text-fine-print--letter-spacing: var(--token-tracking-fine-print);
+  --text-micro-legal: var(--token-size-micro-legal);
+  --text-micro-legal--line-height: var(--token-leading-micro-legal);
+  --text-micro-legal--letter-spacing: var(--token-tracking-micro-legal);
+  --text-nav-link: var(--token-size-nav-link);
+  --text-nav-link--line-height: var(--token-leading-nav-link);
+  --text-nav-link--letter-spacing: var(--token-tracking-nav-link);
 
-  --color-apple-blue: var(--apple-blue);
-  --color-apple-blue-hover: var(--apple-blue-hover);
-  --color-switch-off: var(--switch-off);
+  --spacing-xxs: var(--token-space-xxs);
+  --spacing-xs: var(--token-space-xs);
+  --spacing-sm: var(--token-space-sm);
+  --spacing-md: var(--token-space-md);
+  --spacing-lg: var(--token-space-lg);
+  --spacing-xl: var(--token-space-xl);
+  --spacing-xxl: var(--token-space-xxl);
+  --spacing-section: var(--token-space-section);
 }
 
 /* Styles généraux */
 body {
   margin: 0;
-  background-color: var(--bg);
-  color: var(--fg);
-  font-family:
-    -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
-    "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--token-canvas);
+  color: var(--token-body);
+  font-family: var(--token-font-text);
 }
 
 button,
